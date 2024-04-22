@@ -27,8 +27,7 @@ GitHub Setup If not already, create a github account. Make two repositories in y
       
       <guid>https://kra277.github.io/posts/about/</guid>
       
-      <description>Hello World My name is Kesava Asam, a wet lab trained scientist that got into dry lab in 2019. I would like to catalogue my journey into Bioinformatics in this blog post.
-I will post different bioinformatic pipelines that worked for our lab. Ettiquette that helped us to gain reproducible results. Some tips and tricks that I follow on a day to day basis. Operating System I mostly work on a linux system or a Mac.</description>
+      <description>Hello World! My name is Kesava Asam, a wet-lab trained scientist (2012-2018) that got into dry-lab (aka Bioinformatics) in 2019. Since 2019, I&amp;rsquo;ve been working on RNA seq, Microbiome, Methylation seq, GWAS, Arrays, etc. I am passionate about reproducible research, data cleaning, and data visualizations. I would like to post some of the pipelines and methods I follow in this blog post. Here is the posts you could find here:</description>
       
     </item>
     
