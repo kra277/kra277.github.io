@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name"> | Decode &amp; Deploy</title>
+<meta property="og:title" content=" | Decode &amp; Deploy" />
+<meta name="twitter:title" content=" | Decode &amp; Deploy" />
+<meta itemprop="name" content=" | Decode &amp; Deploy" />
+<meta name="application-name" content=" | Decode &amp; Deploy" />
+<meta property="og:site_name" content="Decode &amp; Deploy" />
+
+<meta name="description" content="A Blog to save and share my Bioinfo Journey">
+<meta itemprop="description" content="A Blog to save and share my Bioinfo Journey" />
+<meta property="og:description" content="A Blog to save and share my Bioinfo Journey" />
+<meta name="twitter:description" content="A Blog to save and share my Bioinfo Journey" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="http://localhost:1313/posts/2024_alab_genecount_boxplots_source_code_v1/" title="" />
+
+
+
+  <meta itemprop="image" content="http://localhost:1313/" />
+  <meta property="og:image" content="http://localhost:1313/" />
+  <meta name="twitter:image" content="http://localhost:1313/" />
+  <meta name="twitter:image:src" content="http://localhost:1313/" />
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=0001-01-01T00:00:00Z />
+    <meta property="article:published_time" content=0001-01-01T00:00:00Z />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "0001-01-01",
+        "description": "",
+        "wordCount":  2313 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "0001-01-01",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Decode \u0026 Deploy"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.125.2">
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/2024_alab_genecount_boxplots_source_code_v1/">
+    <link href="/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "auto" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title"></h1>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#load">Load</a></li>
+    <li><a href="#checks">Checks</a></li>
+    <li><a href="#rank-genes">Rank genes</a></li>
+    <li><a href="#make-plot">Make Plot</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h1 id="packages">Packages</h1>
+<pre><code># Load required packages
+library(tidyverse) # Data wrangling
+library(janitor) # Df cleanup
+library(gt) # for displaying data tables in a pdf
+library(DESeq2) # Change data to matrix
+library(here) # Create customized upset plot
+</code></pre>
+<h1 id="preface">Preface</h1>
+<p>This document shows how to generate Boxplots for top DEG using the
+Variance stabilized counts from RNA seq results.</p>
+<p>Required files for Gene counts Boxplots:</p>
+<ul>
+<li>
+<p>Metadata/phenotype file &ndash;&gt; metadata</p>
+</li>
+<li>
+<p>VST Normalized counts &ndash;&gt; vst_counts</p>
+</li>
+<li>
+<p>DEG results &ndash;&gt; deg_res (Note these are arranged based on Pvalue)</p>
+</li>
+</ul>
+<h1 id="gene-count-boxplots">Gene Count Boxplots</h1>
+<h2 id="load">Load</h2>
+<p>Load DEG results, VST stabilized gene counts, and metadata</p>
+<pre><code># Loading example RData file that has required files
+load(here(&quot;genecount_box_plots/data/example_data.RData&quot;))
+</code></pre>
+<h2 id="checks">Checks</h2>
+<p>Check how the data is formatted</p>
+<pre><code>metadata %&gt;% 
+  head(5) %&gt;% 
+  gt() 
+</code></pre>
+<!-- raw HTML omitted -->
+<p>#ibgbsoosmy thead, #ibgbsoosmy tbody, #ibgbsoosmy tfoot, #ibgbsoosmy tr, #ibgbsoosmy td, #ibgbsoosmy th {
+border-style: none;
+}</p>
+<p>#ibgbsoosmy p {
+margin: 0;
+padding: 0;
+}</p>
+<p>#ibgbsoosmy .gt_table {
+display: table;
+border-collapse: collapse;
+line-height: normal;
+margin-left: auto;
+margin-right: auto;
+color: #333333;
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+background-color: #FFFFFF;
+width: auto;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #A8A8A8;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #A8A8A8;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
+}</p>
+<p>#ibgbsoosmy .gt_title {
+color: #333333;
+font-size: 125%;
+font-weight: initial;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-color: #FFFFFF;
+border-bottom-width: 0;
+}</p>
+<p>#ibgbsoosmy .gt_subtitle {
+color: #333333;
+font-size: 85%;
+font-weight: initial;
+padding-top: 3px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-color: #FFFFFF;
+border-top-width: 0;
+}</p>
+<p>#ibgbsoosmy .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_bottom_border {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_col_headings {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_col_heading {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 6px;
+padding-left: 5px;
+padding-right: 5px;
+overflow-x: hidden;
+}</p>
+<p>#ibgbsoosmy .gt_column_spanner_outer {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+padding-top: 0;
+padding-bottom: 0;
+padding-left: 4px;
+padding-right: 4px;
+}</p>
+<p>#ibgbsoosmy .gt_column_spanner_outer:first-child {
+padding-left: 0;
+}</p>
+<p>#ibgbsoosmy .gt_column_spanner_outer:last-child {
+padding-right: 0;
+}</p>
+<p>#ibgbsoosmy .gt_column_spanner {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 5px;
+overflow-x: hidden;
+display: inline-block;
+width: 100%;
+}</p>
+<p>#ibgbsoosmy .gt_spanner_row {
+border-bottom-style: hidden;
+}</p>
+<p>#ibgbsoosmy .gt_group_heading {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+text-align: left;
+}</p>
+<p>#ibgbsoosmy .gt_empty_group_heading {
+padding: 0.5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: middle;
+}</p>
+<p>#ibgbsoosmy .gt_from_md &gt; :first-child {
+margin-top: 0;
+}</p>
+<p>#ibgbsoosmy .gt_from_md &gt; :last-child {
+margin-bottom: 0;
+}</p>
+<p>#ibgbsoosmy .gt_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+margin: 10px;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+overflow-x: hidden;
+}</p>
+<p>#ibgbsoosmy .gt_stub {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#ibgbsoosmy .gt_stub_row_group {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+vertical-align: top;
+}</p>
+<p>#ibgbsoosmy .gt_row_group_first td {
+border-top-width: 2px;
+}</p>
+<p>#ibgbsoosmy .gt_row_group_first th {
+border-top-width: 2px;
+}</p>
+<p>#ibgbsoosmy .gt_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#ibgbsoosmy .gt_first_summary_row {
+border-top-style: solid;
+border-top-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_first_summary_row.thick {
+border-top-width: 2px;
+}</p>
+<p>#ibgbsoosmy .gt_last_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_grand_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#ibgbsoosmy .gt_first_grand_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-style: double;
+border-top-width: 6px;
+border-top-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_striped {
+background-color: rgba(128, 128, 128, 0.05);
+}</p>
+<p>#ibgbsoosmy .gt_table_body {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_footnotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_footnote {
+margin: 0px;
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#ibgbsoosmy .gt_sourcenotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}</p>
+<p>#ibgbsoosmy .gt_sourcenote {
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#ibgbsoosmy .gt_left {
+text-align: left;
+}</p>
+<p>#ibgbsoosmy .gt_center {
+text-align: center;
+}</p>
+<p>#ibgbsoosmy .gt_right {
+text-align: right;
+font-variant-numeric: tabular-nums;
+}</p>
+<p>#ibgbsoosmy .gt_font_normal {
+font-weight: normal;
+}</p>
+<p>#ibgbsoosmy .gt_font_bold {
+font-weight: bold;
+}</p>
+<p>#ibgbsoosmy .gt_font_italic {
+font-style: italic;
+}</p>
+<p>#ibgbsoosmy .gt_super {
+font-size: 65%;
+}</p>
+<p>#ibgbsoosmy .gt_footnote_marks {
+font-size: 75%;
+vertical-align: 0.4em;
+position: initial;
+}</p>
+<p>#ibgbsoosmy .gt_asterisk {
+font-size: 100%;
+vertical-align: 0;
+}</p>
+<p>#ibgbsoosmy .gt_indent_1 {
+text-indent: 5px;
+}</p>
+<p>#ibgbsoosmy .gt_indent_2 {
+text-indent: 10px;
+}</p>
+<p>#ibgbsoosmy .gt_indent_3 {
+text-indent: 15px;
+}</p>
+<p>#ibgbsoosmy .gt_indent_4 {
+text-indent: 20px;
+}</p>
+<p>#ibgbsoosmy .gt_indent_5 {
+text-indent: 25px;
+}
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code>&lt;tr class=&quot;gt_col_headings&quot;&gt;
+  &lt;th class=&quot;gt_col_heading gt_columns_bottom_border gt_left&quot; rowspan=&quot;1&quot; colspan=&quot;1&quot; scope=&quot;col&quot; id=&quot;sample&quot;&gt;sample&lt;/th&gt;
+  &lt;th class=&quot;gt_col_heading gt_columns_bottom_border gt_center&quot; rowspan=&quot;1&quot; colspan=&quot;1&quot; scope=&quot;col&quot; id=&quot;condition&quot;&gt;condition&lt;/th&gt;
+&lt;/tr&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>vst_counts
+
+## class: DESeqTransform 
+## dim: 13602 12 
+## metadata(2): version annotation
+## assays(1): ''
+## rownames(13602): 57801 26155 ... 285093 3120
+## rowData names(23): ENSEMBL baseMean ... maxCooks dispFit
+## colnames(12): SRR17547999 SRR17548000 ... SRR17548012 SRR17548009
+## colData names(5): Age BMI disease_state condition sizeFactor
+</code></pre>
+<p>vst_counts need to be converted to a tibble with rownames to column</p>
+<pre><code>deg_res[1:5, 1:5] %&gt;% 
+  gt() 
+</code></pre>
+<!-- raw HTML omitted -->
+<p>#xucxcfyhfi thead, #xucxcfyhfi tbody, #xucxcfyhfi tfoot, #xucxcfyhfi tr, #xucxcfyhfi td, #xucxcfyhfi th {
+border-style: none;
+}</p>
+<p>#xucxcfyhfi p {
+margin: 0;
+padding: 0;
+}</p>
+<p>#xucxcfyhfi .gt_table {
+display: table;
+border-collapse: collapse;
+line-height: normal;
+margin-left: auto;
+margin-right: auto;
+color: #333333;
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+background-color: #FFFFFF;
+width: auto;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #A8A8A8;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #A8A8A8;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
+}</p>
+<p>#xucxcfyhfi .gt_title {
+color: #333333;
+font-size: 125%;
+font-weight: initial;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-color: #FFFFFF;
+border-bottom-width: 0;
+}</p>
+<p>#xucxcfyhfi .gt_subtitle {
+color: #333333;
+font-size: 85%;
+font-weight: initial;
+padding-top: 3px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-color: #FFFFFF;
+border-top-width: 0;
+}</p>
+<p>#xucxcfyhfi .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_bottom_border {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_col_headings {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_col_heading {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 6px;
+padding-left: 5px;
+padding-right: 5px;
+overflow-x: hidden;
+}</p>
+<p>#xucxcfyhfi .gt_column_spanner_outer {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+padding-top: 0;
+padding-bottom: 0;
+padding-left: 4px;
+padding-right: 4px;
+}</p>
+<p>#xucxcfyhfi .gt_column_spanner_outer:first-child {
+padding-left: 0;
+}</p>
+<p>#xucxcfyhfi .gt_column_spanner_outer:last-child {
+padding-right: 0;
+}</p>
+<p>#xucxcfyhfi .gt_column_spanner {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 5px;
+overflow-x: hidden;
+display: inline-block;
+width: 100%;
+}</p>
+<p>#xucxcfyhfi .gt_spanner_row {
+border-bottom-style: hidden;
+}</p>
+<p>#xucxcfyhfi .gt_group_heading {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+text-align: left;
+}</p>
+<p>#xucxcfyhfi .gt_empty_group_heading {
+padding: 0.5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: middle;
+}</p>
+<p>#xucxcfyhfi .gt_from_md &gt; :first-child {
+margin-top: 0;
+}</p>
+<p>#xucxcfyhfi .gt_from_md &gt; :last-child {
+margin-bottom: 0;
+}</p>
+<p>#xucxcfyhfi .gt_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+margin: 10px;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+overflow-x: hidden;
+}</p>
+<p>#xucxcfyhfi .gt_stub {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#xucxcfyhfi .gt_stub_row_group {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+vertical-align: top;
+}</p>
+<p>#xucxcfyhfi .gt_row_group_first td {
+border-top-width: 2px;
+}</p>
+<p>#xucxcfyhfi .gt_row_group_first th {
+border-top-width: 2px;
+}</p>
+<p>#xucxcfyhfi .gt_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#xucxcfyhfi .gt_first_summary_row {
+border-top-style: solid;
+border-top-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_first_summary_row.thick {
+border-top-width: 2px;
+}</p>
+<p>#xucxcfyhfi .gt_last_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_grand_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#xucxcfyhfi .gt_first_grand_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-style: double;
+border-top-width: 6px;
+border-top-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_striped {
+background-color: rgba(128, 128, 128, 0.05);
+}</p>
+<p>#xucxcfyhfi .gt_table_body {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_footnotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_footnote {
+margin: 0px;
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#xucxcfyhfi .gt_sourcenotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}</p>
+<p>#xucxcfyhfi .gt_sourcenote {
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}</p>
+<p>#xucxcfyhfi .gt_left {
+text-align: left;
+}</p>
+<p>#xucxcfyhfi .gt_center {
+text-align: center;
+}</p>
+<p>#xucxcfyhfi .gt_right {
+text-align: right;
+font-variant-numeric: tabular-nums;
+}</p>
+<p>#xucxcfyhfi .gt_font_normal {
+font-weight: normal;
+}</p>
+<p>#xucxcfyhfi .gt_font_bold {
+font-weight: bold;
+}</p>
+<p>#xucxcfyhfi .gt_font_italic {
+font-style: italic;
+}</p>
+<p>#xucxcfyhfi .gt_super {
+font-size: 65%;
+}</p>
+<p>#xucxcfyhfi .gt_footnote_marks {
+font-size: 75%;
+vertical-align: 0.4em;
+position: initial;
+}</p>
+<p>#xucxcfyhfi .gt_asterisk {
+font-size: 100%;
+vertical-align: 0;
+}</p>
+<p>#xucxcfyhfi .gt_indent_1 {
+text-indent: 5px;
+}</p>
+<p>#xucxcfyhfi .gt_indent_2 {
+text-indent: 10px;
+}</p>
+<p>#xucxcfyhfi .gt_indent_3 {
+text-indent: 15px;
+}</p>
+<p>#xucxcfyhfi .gt_indent_4 {
+text-indent: 20px;
+}</p>
+<p>#xucxcfyhfi .gt_indent_5 {
+text-indent: 25px;
+}
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<pre><code>&lt;tr class=&quot;gt_col_headings&quot;&gt;
+  &lt;th class=&quot;gt_col_heading gt_columns_bottom_border gt_right&quot; rowspan=&quot;1&quot; colspan=&quot;1&quot; scope=&quot;col&quot; id=&quot;ENTREZID&quot;&gt;ENTREZID&lt;/th&gt;
+  &lt;th class=&quot;gt_col_heading gt_columns_bottom_border gt_left&quot; rowspan=&quot;1&quot; colspan=&quot;1&quot; scope=&quot;col&quot; id=&quot;SYMBOL&quot;&gt;SYMBOL&lt;/th&gt;
+  &lt;th class=&quot;gt_col_heading gt_columns_bottom_border gt_right&quot; rowspan=&quot;1&quot; colspan=&quot;1&quot; scope=&quot;col&quot; id=&quot;log2FoldChange&quot;&gt;log2FoldChange&lt;/th&gt;
+  &lt;th class=&quot;gt_col_heading gt_columns_bottom_border gt_right&quot; rowspan=&quot;1&quot; colspan=&quot;1&quot; scope=&quot;col&quot; id=&quot;pvalue&quot;&gt;pvalue&lt;/th&gt;
+  &lt;th class=&quot;gt_col_heading gt_columns_bottom_border gt_right&quot; rowspan=&quot;1&quot; colspan=&quot;1&quot; scope=&quot;col&quot; id=&quot;padj&quot;&gt;padj&lt;/th&gt;
+&lt;/tr&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code># convert the VST Normalized counts into a dataframe
+vst_res_df &lt;- 
+  assay(vst_counts) %&gt;% 
+  as_tibble(rownames = &quot;ENTREZID&quot;)
+
+# make a df for expression plots
+expr_df &lt;- 
+  deg_res %&gt;% 
+  # join the DEG with the variance stabilized counts using Entrez ID column
+  inner_join(vst_res_df, by = &quot;ENTREZID&quot;) %&gt;% 
+  # Remove unneccessary columns
+  dplyr::select(-c(ENTREZID, log2FoldChange, pvalue, 
+                   padj, qvalue, baseMean, lfcSE, GENENAME)) %&gt;% 
+  # Pick top 10 DEG
+  head(10) %&gt;% 
+  # pivot longer to get all normalized counts to one column
+  pivot_longer(!SYMBOL, names_to = &quot;sample&quot;, values_to = &quot;norm_counts&quot;) %&gt;% 
+  # Join with metadata using sample column
+  inner_join(metadata, by = &quot;sample&quot;)
+</code></pre>
+<h2 id="rank-genes">Rank genes</h2>
+<p>To show the genes based on the pvalue instead of alphabetical. Get the
+genes and relevel in the next step</p>
+<pre><code># This will be used to relevel the gene list
+gene_rank &lt;- 
+  deg_res %&gt;% 
+  head(10) %&gt;% 
+  pull(SYMBOL)
+</code></pre>
+<h2 id="make-plot">Make Plot</h2>
+<pre><code>gc_boxplot &lt;- 
+  expr_df %&gt;% 
+  mutate(SYMBOL = fct_relevel(SYMBOL, gene_rank)) %&gt;% 
+  mutate(condition = as.factor(condition)) %&gt;%
+  ggplot(aes(x = SYMBOL, y = norm_counts, fill = condition)) +
+  
+  geom_point(size = 3.5, alpha = 0.3, shape = 21, 
+             position = position_dodge(0.55)) +
+  
+  stat_summary(fun.data = &quot;mean_cl_boot&quot;, alpha = 0.8,
+               geom = &quot;crossbar&quot;, width = 0.5, color = &quot;black&quot;,
+               position = position_dodge(0.55)) +
+  
+  scale_color_manual(values = c(&quot;darkorchid4&quot;, &quot;gold2&quot;)) +
+  scale_fill_manual(values = c(&quot;darkorchid4&quot;, &quot;gold2&quot;)) +
+  
+  labs(
+    title = &quot;Expression Box Plot of Top DEG&quot;, 
+    subtitle = &quot;Variance stabilized transformed gene counts were plotted&quot;,
+    x = &quot;&quot;, 
+    y = &quot;Counts&quot;
+  ) +
+  theme_bw() +
+  theme(legend.position = &quot;bottom&quot;, 
+        panel.grid.minor = element_line(linewidth =  0.1), 
+        panel.grid.major = element_line(linewidth =  0.4, color = &quot;gray85&quot;))
+
+gc_boxplot
+</code></pre>
+<p><img src="2024_alab_genecount_boxplots_source_code_v1_files/figure-markdown_strict/unnamed-chunk-10-1.png"></p>
+<pre><code>sessionInfo()
+
+## R version 4.3.0 (2023-04-21)
+## Platform: aarch64-apple-darwin20 (64-bit)
+## Running under: macOS Ventura 13.6.2
+## 
+## Matrix products: default
+## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## time zone: Asia/Kolkata
+## tzcode source: internal
+## 
+## attached base packages:
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods  
+## [8] base     
+## 
+## other attached packages:
+##  [1] here_1.0.1                  DESeq2_1.40.2              
+##  [3] SummarizedExperiment_1.30.2 Biobase_2.60.0             
+##  [5] MatrixGenerics_1.12.3       matrixStats_1.1.0          
+##  [7] GenomicRanges_1.52.0        GenomeInfoDb_1.36.3        
+##  [9] IRanges_2.34.1              S4Vectors_0.38.2           
+## [11] BiocGenerics_0.46.0         gt_0.10.0                  
+## [13] janitor_2.2.0               lubridate_1.9.3            
+## [15] forcats_1.0.0               stringr_1.5.1              
+## [17] dplyr_1.1.4                 purrr_1.0.2                
+## [19] readr_2.1.4                 tidyr_1.3.0                
+## [21] tibble_3.2.1                ggplot2_3.4.4              
+## [23] tidyverse_2.0.0            
+## 
+## loaded via a namespace (and not attached):
+##  [1] tidyselect_1.2.0        farver_2.1.1           
+##  [3] bitops_1.0-7            fastmap_1.1.1          
+##  [5] RCurl_1.98-1.13         digest_0.6.33          
+##  [7] rpart_4.1.21            timechange_0.2.0       
+##  [9] lifecycle_1.0.4         cluster_2.1.4          
+## [11] magrittr_2.0.3          compiler_4.3.0         
+## [13] rlang_1.1.2             Hmisc_5.1-1            
+## [15] sass_0.4.7              tools_4.3.0            
+## [17] utf8_1.2.4              yaml_2.3.7             
+## [19] data.table_1.14.8       knitr_1.45             
+## [21] labeling_0.4.3          htmlwidgets_1.6.2      
+## [23] S4Arrays_1.0.6          DelayedArray_0.26.7    
+## [25] xml2_1.3.5              abind_1.4-5            
+## [27] BiocParallel_1.34.2     withr_2.5.2            
+## [29] foreign_0.8-85          nnet_7.3-19            
+## [31] grid_4.3.0              fansi_1.0.5            
+## [33] colorspace_2.1-0        scales_1.2.1           
+## [35] cli_3.6.1               rmarkdown_2.25         
+## [37] crayon_1.5.2            generics_0.1.3         
+## [39] rstudioapi_0.15.0       tzdb_0.4.0             
+## [41] zlibbioc_1.46.0         parallel_4.3.0         
+## [43] XVector_0.40.0          base64enc_0.1-3        
+## [45] vctrs_0.6.4             Matrix_1.6-3           
+## [47] hms_1.1.3               htmlTable_2.4.2        
+## [49] Formula_1.2-5           locfit_1.5-9.8         
+## [51] glue_1.6.2              codetools_0.2-19       
+## [53] stringi_1.8.1           gtable_0.3.4           
+## [55] munsell_0.5.0           pillar_1.9.0           
+## [57] htmltools_0.5.7         GenomeInfoDbData_1.2.10
+## [59] R6_2.5.1                rprojroot_2.0.4        
+## [61] evaluate_0.23           lattice_0.22-5         
+## [63] highr_0.10              backports_1.4.1        
+## [65] snakecase_0.11.1        Rcpp_1.0.11            
+## [67] checkmate_2.3.0         gridExtra_2.3          
+## [69] xfun_0.41               pkgconfig_2.0.3
+</code></pre>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/kra277" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com/renthusiast3" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Kesava Asam.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

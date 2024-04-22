@@ -8,6 +8,18 @@
     <language>en-gb</language>
     <lastBuildDate>Mon, 22 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://kra277.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Gene Counts Boxplots</title>
+      <link>https://kra277.github.io/posts/gc_boxplots/</link>
+      <pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://kra277.github.io/posts/gc_boxplots/</guid>
+      
+      <description>Introduction When RNA seq analysis is performed, we end up with a lot of genes that are differentially expressed between conditions. Sometimes it may be easy to view these differentially expressed genes side by side (separated by condition) per each gene. Here is how some top genes can be plotted using ggplot2 in R.
+Libraries # Load required packages library(tidyverse) # Data wrangling and plotting library(DESeq2) # DEG, conv raw gene counts to transformed gene counts library(gt) # display tables Required Files Metadata/phenotype file &amp;ndash;&amp;gt; metadata VST Normalized counts &amp;ndash;&amp;gt; vst_counts DEG results &amp;ndash;&amp;gt; deg_res Checks metadata %&amp;gt;% head(5) %&amp;gt;% gt() deg_res[1:5, 1:5] %&amp;gt;% gt() Data Prep # convert the VST Normalized counts into a dataframe vst_res_df &amp;lt;- assay(vst_counts) %&amp;gt;% as_tibble(rownames = &amp;#34;ENTREZID&amp;#34;) # make a df for expression plots expr_df &amp;lt;- deg_res %&amp;gt;% # join the DEG with the variance stabilized counts using Entrez ID column inner_join(vst_res_df, by = &amp;#34;ENTREZID&amp;#34;) %&amp;gt;% # Remove unneccessary columns dplyr::select(-c(ENTREZID, log2FoldChange, pvalue, padj, qvalue, baseMean, lfcSE, GENENAME)) %&amp;gt;% # Pick top 10 DEG head(10) %&amp;gt;% # pivot longer to get all normalized counts to one column pivot_longer(!</description>
+      
+    </item>
+    
+    <item>
       <title>Github Blog setup</title>
       <link>https://kra277.github.io/posts/blog_setup/</link>
       <pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate>
