@@ -6,6 +6,19 @@
     <description>Recent content in Posts on Decode &amp; Deploy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Apr 2024 14:47:47 +0530</lastBuildDate><atom:link href="https://kra277.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://kra277.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github Blog setup</title>
+      <link>https://kra277.github.io/posts/blog_setup/</link>
+      <pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://kra277.github.io/posts/blog_setup/</guid>
+      
+      <description>Introduction Blogs are probably a good way to show case the bioinformatic learning journey. A free blog can be created using github and Hugo themes. Following instructions were provided for a Mac.
+GitHub Setup If not already, create a github account. Make two repositories in your account.
+1 Your github account name followed by github.io. This folder visibility is set to public. 2 Generic blog repository. Used to store all the code needed.</description>
+      
+    </item>
+    
   </channel>
 </rss>
